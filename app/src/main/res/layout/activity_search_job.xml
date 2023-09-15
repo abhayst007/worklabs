@@ -1,9 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:background="@color/screen_bg"
     tools:context=".activity.SearchJobActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+
+            <include layout="@layout/custom_toolbar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/job_search_job"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/custom_et"
+                    android:drawableLeft="@drawable/material_symbols_search"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@color/black"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center|start"
+                    android:hint="Search by job title or keyword"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="10dp"
+                    android:textCursorDrawable="@drawable/custom_cursor"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/job_error_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-5dp"
+                    android:gravity="end"
+                    android:text="Cannot be blank"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/job_search_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginVertical="5dp"
+                    android:background="@drawable/custom_et"
+                    android:drawableLeft="@drawable/carbon_location"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/black"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center|start"
+                    android:hint="Enter City or State"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="10dp"
+                    android:textCursorDrawable="@drawable/custom_cursor"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/job_search_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/app_orange"
+                        android:elevation="0dp"
+                        android:fontFamily="monospace"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="8dp"
+                        android:text="Search"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textFontWeight="500"
+                        android:textSize="14sp" />
+
+                    <ProgressBar
+                        android:id="@+id/search_progressbar"
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:indeterminate="true"
+                        android:indeterminateDrawable="@drawable/custom_progress_bar"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/not_found"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/login_image"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/login_image" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="#000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textSize="38sp"
+                android:text="No Jobs found in your field"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="30dp"
+            android:orientation="vertical" />
+
+
+    </LinearLayout>
+    <!--        <include layout="@layout/job_listview" />-->
+
+</ScrollView>

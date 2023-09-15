@@ -4,20 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="40dp"
     android:gravity="center"
-    android:layout_margin="41dp"
     android:orientation="vertical"
     tools:context=".activity.SplashActivity">
 
     <ImageView
         android:layout_width="246dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo" />
+        android:src="@drawable/app_logo" />
 
     <TextView
         android:id="@+id/splash_quote"
-        android:layout_width="278dp"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Unlock Your Potential, Find Your Dream Job, and Thrive with WorkLabs." />
 
 
 </LinearLayout>
